@@ -1,0 +1,76 @@
+{
+    "count": 1,
+    "password":"L@locura1384",
+    "profiles": [
+        {
+            "firstName": "Alberto Eduardo",
+            "lastName": "Hernández Cruz",
+            "email":"eduardo.hc.002@gmail.com",
+            "birthday": "20-04-1984",
+            "claveelectoral":"",
+            "ine":"",
+            "curp":"HECA841013HDFRRL09",
+            "rfc":"heca841013hs0",
+            "seguro":"0918366427",
+            "cargo":"Director de proyectos",
+            "picture": "",
+            "profile" : "public"
+        },
+        {
+            "firstName": "Maria Esther",
+            "lastName": "Cruz Zavala",
+            "email":"maesthercruz002@gmail.com",
+            "birthday": "20-01-1961",
+            "claveelectoral":"",
+            "ine":"",
+            "curp":"CUZE610120MDFRVS01",
+            "rfc":"CUZE610120",
+            "seguro":"0918366431",
+            "cargo":"",
+            "picture": "",
+            "profile" : "private"
+        },
+        {
+            "firstName": "Javier",
+            "lastName": "Hernández Garcia",
+            "email":"javiher4@gmail.com",
+            "birthday": "20-04-1984",
+            "claveelectoral":"",
+            "ine":"",
+            "curp":"HEGJ530704HDFRRV08",
+            "rfc":"HEGJ530704",
+            "seguro":"0918366419",
+            "cargo":"",
+            "picture": "",
+            "profile" : "public"
+        },
+        {
+            "firstName": "Amara Esther",
+            "lastName": "Hernández Cruz",
+            "email":"eduardo.hc.002@gmail.com",
+            "birthday": "20-08-2005",
+            "claveelectoral":"",
+            "ine":"",
+            "curp":"HECA050820MDFRRMA6",
+            "rfc":"HECA050820",
+            "seguro":"",
+            "cargo":"",
+            "picture": "",
+            "profile" : "public"
+        },
+        {
+            "firstName": "MARIA INES TERESA",
+            "lastName": "ZAVALA VALENCIA",
+            "email":"",
+            "birthday": "20-04-0937",
+            "claveelectoral":"",
+            "ine":"",
+            "curp":"ZAVI370420MDFVLN03",
+            "rfc":"ZAVI370420",
+            "seguro":"0",
+            "cargo":"",
+            "picture": "",
+            "profile" : "public"
+        }
+    ]
+}
