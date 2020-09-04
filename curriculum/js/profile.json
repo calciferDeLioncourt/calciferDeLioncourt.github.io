@@ -1,0 +1,89 @@
+{
+    "count":"1",
+    "nombre":"Diana Yessica ",
+    "apellidos":"Montero Delgadillo",
+    "foto":"photo.jpg",
+    "celular":"5588305654",
+    "email":"edu.ambiental.montedy@gmail.com",
+    "rfc":"MODD860410S99",
+    "secciones":[
+        {
+            "titulo":"EXPERENCIA PROFESIONAL",
+            "subtitulo":"",
+            "contenido":[
+                "Docente de laboratorio nivel primaria, impartiendo ciencias naturales, fenómenos físicos y químicos, para mejorar el aprendizaje de los niños. Actualmente","Docente nivel secundaria 2014-2015, impartiendo Biología en el Colegio Subiaco S.C.","“Soporte técnico para el análisis, identificación y depuración de documentos” realizando la identificación y depuración del material para su ordenamiento por medio de claves para el software de uso exclusivo de COFETEL. 2010."
+            ]
+        },
+        {
+            "titulo":"ESTUDIOS UNIVERSITARIOS",
+            "subtitulo":"Universidad Autónoma Metropolitana, Unidad Iztapalapa (UAM-I).",
+            "contenido":[
+                "Licenciatura en Hidrobiología. Servicio social: “Hidrocarburos aromáticos en sedimentos asociados a praderas de pastos marinos en La reserva de la Biosfera Los Petenes, Campeche” Realización de trabajo de gabinete, análisis de muestras de sedimento (Granulometría, obtención de %CO, COT técnica de Gaudette et al, (1974), determinación de Hidrocarburos fósiles en sedimento basado en UNEP (1992). Mayo 2012- abril 2013."
+            ]
+        },
+        {
+            "titulo":"PARTICIPACIÓN EN PROYECTOS DE EVALUACIÓN DE IMPACTO AMBIENTAL",
+            "subtitulo":"",
+            "contenido":[
+                "“Ordenamiento Ecológico del Territorio, modalidad regional de Ixmiquilpan, Hgo.”  Apoyando la investigación en la descripción física de los aspectos ambientales, calidad de agua, vegetación, hidrología y aspectos sociales en la región, redacción, estadística y correlación de datos para los municipios solicitados. 2013.","“Indicadores del estado de las comunidades de pastos marinos y manglares en la zona costera del Golfo de México susceptibles de ser impactada por los hidrocarburos derramados por la plataforma Horizon operada por BP. INE-UAM” realizando análisis de granulometría y carbono orgánico. Mayo y junio 2012."
+            ]
+        },
+        {
+            "titulo":"DIPLOMAS Y RECONOCIMIENTOS",
+            "subtitulo":"",
+            "contenido":[
+                "“Derecho ambiental y el Acceso a la Justicia Ambiental” 16 de febrero 2015, asistencia a la conferencia Tribunal Federal de Justicia y Administrativa, Centro de Estudios Superiores en materia de derecho Fiscal y Administrativo.","“Conchas, caparazones y algo más…” Semana de las Ciencias del 12 al 17 de noviembre 2012, expositora en las instalaciones de la Universidad Autónoma Metropolitana plantel Iztapalapa.","“Productores Primarios” Semana de las Ciencias del 7 al 13 de noviembre 2011, expositora en los stands de las instalaciones de la Universidad Autónoma Metropolitana plantel Iztapalapa."
+            ]
+        },
+        {
+            "titulo":"PRESENTACIONES EN CONGRESOS Y REUNIONES ACADEMICAS",
+            "subtitulo":"",
+            "contenido":[
+                "Rodríguez-Palacio, M.C., S. Álvarez-Hernández, E.M. Barrera-Cruz, D.Y. Montero-Delgadillo, P. Montiel-Mejía, M. Olivares-Eslava, P. Uriostegui-Gracía, C. Lozano-Ramírez. 2011.  “Fitoplancton de Zempoala y Tonatiahua, lagos polimícticos del corredor Ecológico Ajusco-Chichinautzin”  IX Congreso de Ficología de Latinoamérica y el Caribe” VII Reunión Iberoamericana de Ficología; IX Simposio Argentino de Ficología. La Plata, Argentina. México. Pp 108-109. Bol. Soc. Argent. Bot. 46(supl.) 238p. ","“Segundo Congreso Juvenil y Exhibición del Patrimonio Cultural y Natural en la Región de Texcoco” para su exposición en el centro cultural Texcoco del 27 al 30 de marzo 2003, INSTRUCT, A.C. (Red Interamericana de Estudios y Capacitación en la Preservación de los Recursos Naturales y Culturales de las Comunidades). Colaboración en Comité Organizador."
+            ]
+        },
+        {
+            "titulo":"CURSOS Y SEMINARIOS",
+            "subtitulo":"",
+            "contenido":[
+                "El lenguaje corporal del docente y su influencia en el proceso de enseñanza aprendizaje.","Habilidades socioemocionales. En educación básica.","Técnicas de enseñanza y estrategias de motivación, para educación básica.","Aulas digitales móviles. La nueva normalidad escolar.","Ciberseguridad. Seguridad cibernética o seguridad de la información.","Emociones, regulación socioemocional en la vida.","Neuroeducación básica.","La Autoestima en el proceso educativo.","Neurodidáctica.","La docencia y el aprendizaje centrado en el alumno.","Pausas activas como estrategia lúdica.","Herramientas digitales para la enseñanza.","Recursos y estrategias para el desarrollo de habilidades matemáticas en educación básica.","Tecnología Educativa"
+
+            ]
+        },
+        {
+            "titulo":"COMPUTACIÓN / IDIOMAS",
+            "contenido":[
+                "PAQUETERIA MICROSOFT OFFICE","NCSS (2009)","Inglés (TRADUCCION Y LECTURA INTERMEDIO)","PowerDirector","Adobe After effects"
+
+            ]
+        }
+    ],
+    "skills":[
+        {
+            "titulo":"PAQUETERIA MICROSOFT OFFICE",
+            "porcentaje":"98",
+            "icono":"office.png"
+        },
+        {
+            "titulo":"NCSS (2009)",
+            "porcentaje":"100",
+            "icono":""
+        },
+        {
+            "titulo":"Inglés (TRADUCCION Y LECTURA)  ",
+            "porcentaje":"50",
+            "icono":"traductor.png"
+        },
+        {
+            "titulo":"PowerDirector",
+            "porcentaje":"75",
+            "icono":""
+        },
+        {
+            "titulo":"Adobe After effects",
+            "porcentaje":"80",
+            "icono":"ae.png"
+        }
+    ]
+    
+}
