@@ -137,9 +137,11 @@ document.querySelector('#form').addEventListener('change', e => {
     `;
     for(let i = 0; i < document.querySelectorAll('.title').length; i++){
         document.querySelectorAll('.title')[i].style.color=document.querySelectorAll('.input')[3].value+'E6';
-        console.log();
-    }
+    };
     document.querySelector('.title__aside').style.color=document.querySelectorAll('.input')[3].value+'B3';
     document.querySelector('.subtitle__profesion').style.color=document.querySelectorAll('.input')[3].value+'B3';
     document.querySelector('.curriculum').style.color=document.querySelectorAll('.input')[4].value+'B3';
+    for(let i = 0; i < document.querySelectorAll('.link__btn').length; i++){
+        document.querySelectorAll('.link__btn')[i].style.color=document.querySelectorAll('.input')[3].value+'B3';
+    };
 }); 
