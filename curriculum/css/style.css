@@ -120,7 +120,7 @@ body{
     margin-right: 15px;
 }
 .link__btn:hover{
-    color: rgba(255,255,255,1);
+    color: var(--textoClaro);
     box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.5);
     transform: translateY(-5px);
 }
@@ -139,7 +139,7 @@ body{
     color: rgba(0, 0, 0, 0.9);
     border-radius: 5px;
     background: #fff;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .section__curriculum{
     width: 100%;
@@ -285,33 +285,33 @@ body{
     .section.hoja{
         flex-wrap: wrap;
         overflow-y: scroll;
+        padding-bottom: 50px;
     }
     .cont__contacto{
         position: fixed;
         left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: 0;
         z-index: 1000;
 
-        width: 50px;
+        flex-direction: row;
+        width: 100%;
+        border: solid 3px var(--colorMedio);
     }
     .btn{
-        width: 100%;
-        margin-bottom: 5px;
+        width: 33.3%;
+        margin-bottom: 0px;
     }
     .link__btn{
         display: flex;
         justify-content: center;
         align-items: center;
 
-        width: 35px;
+        width: 100%;
         height: 50px;
         color: var(--colorMedio);
         background: rgba(255,255,255,0.7);
         padding: 0;
-        border-radius: 0 50px 50px 0;
-        border: solid 3px var(--colorMedio);
-        border-left: none;
+        border-radius: 0;
         overflow: hidden;
     }
     .link__btn i{
