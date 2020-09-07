@@ -2,6 +2,7 @@ const form = document.querySelector('#profile'),
     search = document.querySelector('#search'),
     pass = document.querySelector('#pass');
 let superUser = false;
+header();
 search.addEventListener('keyup', ()=> {
     busqueda = search.value = search.value.toLowerCase().replace(/\b[a-z]/g, function(letter){
         return letter.toUpperCase();
@@ -17,7 +18,6 @@ function listar(buscar){
     .then(data => {
         let datos=[];
         if(data.password === pass.value){
-            modalData();
             let $profile = buscar;
             let profile = data.profiles.filter(profile=>profile.firstName === $profile);
             if(profile.length >= 1 && profile[0].profile === "public"){
@@ -30,21 +30,9 @@ function listar(buscar){
             };
         };
         if(datos.length >= 1){
-            table(datos);
+            modalData(datos);
         }else{
             document.querySelector('#nombre').textContent='No hay datos';
-        };
-        function table(datos){
-            document.querySelector('#nombre').textContent = datos[0].firstName+" "+datos[0].lastName;
-            document.querySelector('#cargo').textContent = datos[0].cargo;
-            document.querySelector('#curp').textContent = datos[0].curp.toUpperCase();
-            document.querySelector('#rfc').textContent = datos[0].rfc.toUpperCase();
-            document.querySelector('#email').textContent = datos[0].email;
-            document.querySelector('#birthday').textContent = datos[0].birthday;
-            document.querySelector('#claveelectoral').textContent = datos[0].claveelectoral;
-            document.querySelector('#ine').textContent = datos[0].ine;
-            document.querySelector('#seguro').textContent = datos[0].seguro;
-            document.querySelector('#foto');
         };
     })
     .catch(error => {
@@ -52,10 +40,100 @@ function listar(buscar){
         console.log(error);
     });
 };
-function modalData(){
+function modalData(data){
+    // >>>>> -->>>>> ----- datos de perfil ----- <<<<<-- <<<<<
+    
+    let btnClose = document.querySelector('.header').appendChild(document.createElement('div'));
+        btnClose.setAttribute('class', 'btn__close');
+    let iconClose = btnClose.appendChild(document.createElement('i'));
+        iconClose.setAttribute('class', 'fas fa-times');
     let contId = document.querySelector('body').appendChild(document.createElement('div'));
         contId.setAttribute('class', 'id');
-    let header = contId.appendChild(document.createElement('header'));
+    let tarjeta = contId.appendChild(document.createElement('div'));
+        tarjeta.setAttribute('class', 'tarjeta');
+        bloque('Nombre',data[0].firstName+" "+data[0].lastName);
+        bloque('Cargo', data[0].cargo);
+        bloque('CURP', data[0].curp.toUpperCase());
+        bloque('RFC', data[0].rfc.toUpperCase());
+        bloque('E-mail', data[0].email);
+        bloque('Birthday', data[0].birthday);
+        bloque('Clave Electoral', data[0].claveelectoral);
+        bloque('INE', data[0].ine);
+        bloque('Seguro', data[0].seguro);
+        if(data[0].databank.length>0){
+            for(dataBank of data[0].databank){
+                if(dataBank.clabe != "" && dataBank.clabe.length === 18){
+                    bloque(`Banco ${dataBank.banco}(CLABE)`, dataBank.clabe);
+                };
+                if(dataBank.cuenta != ""){
+                    bloque(`Banco ${dataBank.banco}(Cuenta)`, dataBank.cuenta);
+                };
+            };
+        };
+    // let foto = tarjeta.appendChild(document.createElement('div'));
+    //     foto.setAttribute('class', 'title');
+    //     foto.textContent='Foto :';
+    // let contFoto = tarjeta.appendChild(document.createElement('div'));
+    //     contFoto.setAttribute('class', 'cont__foto');
+    // let imgFoto = contFoto.appendChild(document.createElement('img'));
+    //     imgFoto.setAttribute('id', 'foto');
+    //     imgFoto.setAttribute('src','');
+    // >>>>> -->>>>> ----- funcion de datos ----- <<<<<-- <<<<<
+    
+    function bloque(element,info){
+        let cont = tarjeta.appendChild(document.createElement('div'));
+            cont.setAttribute('class', 'cont__element');
+        let contText = cont.appendChild(document.createElement('div'));
+            contText.setAttribute('class','cont__text');
+
+        let div1 = contText.appendChild(document.createElement('div'));
+            div1.setAttribute('class', 'title');
+            div1.textContent= element+': ';
+        let icon = cont.appendChild(document.createElement('i'));
+            icon.setAttribute('class', 'clipboard fas fa-clipboard');
+            icon.setAttribute('title', 'Copiar');
+        let div2 = contText.appendChild(document.createElement('div'));
+            div2.setAttribute('id', element.toLowerCase().replace(/[\-\s]/g, ''));
+            div2.setAttribute('class', 'cont');
+            div2.textContent=info;
+    };
+    const clipboard = document.querySelectorAll(".clipboard"),
+        cont = document.querySelectorAll(".cont"),
+        close = document.querySelector(".btn__close");
+    // >>>>> -->>>>> ----- copidar datos de bloque ----- <<<<<-- <<<<<
+    
+    for(let i = 0; i < clipboard.length; i++){
+        clipboard[i].addEventListener('click', e => {
+            let textoACopiar = cont[i];
+            let seleccion = document.createRange();
+                seleccion.selectNodeContents(textoACopiar);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(seleccion);
+            let res = document.execCommand('copy');
+            window.getSelection().removeAllRanges(seleccion);
+            myAlert('.title',i);
+        });
+    };
+    // >>>>> -->>>>> ----- eliminar modal ----- <<<<<-- <<<<<
+    
+    close.addEventListener('click', ()=>{
+        document.querySelector('.id').remove();
+        document.querySelector('.btn__close').remove();
+    });
+    function myAlert(contenedor,indice){
+        let mensaje = document.body.appendChild(document.createElement('div'));
+            mensaje.setAttribute('class','mensaje__alert');
+            mensaje.textContent= 'Copiado a porta papeles : '+document.querySelectorAll(contenedor)[indice].textContent;
+        setTimeout(() => {
+            mensaje.style='opacity:0;'
+            setTimeout(() => {
+                mensaje.remove();
+            }, 300);
+        }, 2000);
+    }
+}
+function header(){
+    let header = document.body.insertBefore(document.createElement('header'), document.querySelector('.cont_img'));
         header.setAttribute('class', 'header');
     let contImgId = header.appendChild(document.createElement('div'));
         contImgId.setAttribute('class', 'cont_img_id');
@@ -71,60 +149,4 @@ function modalData(){
         textHeader.setAttribute('class', 'p_header');
     let p = textHeader.appendChild(document.createElement('p'));
         p.textContent = 'id_Personal';
-    let btnClose = header.appendChild(document.createElement('div'));
-        btnClose.setAttribute('class', 'btn__close');
-    let iconClose = btnClose.appendChild(document.createElement('i'));
-        iconClose.setAttribute('class', 'fas fa-times');
-    let tarjeta = contId.appendChild(document.createElement('div'));
-        tarjeta.setAttribute('class', 'tarjeta');
-        bloque('Nombre');
-        bloque('Cargo');
-        bloque('CURP');
-        bloque('RFC');
-        bloque('E-mail');
-        bloque('Birthday');
-        bloque('Clave Electoral');
-        bloque('INE');
-        bloque('Seguro');
-    let foto = tarjeta.appendChild(document.createElement('div'));
-        foto.setAttribute('class', 'title');
-        foto.textContent='Foto :';
-    let contFoto = tarjeta.appendChild(document.createElement('div'));
-        contFoto.setAttribute('class', 'cont__foto');
-    let imgFoto = contFoto.appendChild(document.createElement('img'));
-        imgFoto.setAttribute('id', 'foto');
-        imgFoto.setAttribute('src','');
-    const clipboard = document.querySelectorAll(".clipboard"),
-        cont = document.querySelectorAll(".cont"),
-        close = document.querySelector(".btn__close");
-    for(let i = 0; i < clipboard.length; i++){
-        clipboard[i].addEventListener('click', e => {
-            let textoACopiar = cont[i];
-            let seleccion = document.createRange();
-                seleccion.selectNodeContents(textoACopiar);
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(seleccion);
-            let res = document.execCommand('copy');
-            window.getSelection().removeAllRanges(seleccion);
-        });
-    };
-    close.addEventListener('click', ()=>{
-        document.querySelector('.id').remove();
-    });
-    function bloque(element){
-        let cont = tarjeta.appendChild(document.createElement('div'));
-            cont.setAttribute('class', 'cont__element');
-        let contText = cont.appendChild(document.createElement('div'));
-            contText.setAttribute('class','cont__text');
-
-        let div1 = contText.appendChild(document.createElement('div'));
-            div1.setAttribute('class', 'title');
-            div1.textContent= element+': ';
-        let icon = cont.appendChild(document.createElement('i'));
-            icon.setAttribute('class', 'clipboard fas fa-clipboard');
-            icon.setAttribute('title', 'Copiar');
-        let div2 = contText.appendChild(document.createElement('div'));
-            div2.setAttribute('id', element.toLowerCase().replace(/[\-\s]/g, ''));
-            div2.setAttribute('class', 'cont');
-    };
 }

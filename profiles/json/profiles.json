@@ -14,6 +14,28 @@
             "seguro":"0918366427",
             "cargo":"Director de proyectos",
             "picture": "",
+            "databank":[
+                {
+                    "banco":"Azteca",
+                    "clabe":"127180013973724818",
+                    "cuenta":"34341397372481"
+                },
+                {
+                    "banco":"Fondeadora",
+                    "clabe":"646010168900101832",
+                    "cuenta":""
+                },
+                {
+                    "banco":"Cuenca",
+                    "clabe":"646180157019648224",
+                    "cuenta":""
+                },
+                {
+                    "banco":"Flink",
+                    "clabe":"646180153501609924",
+                    "cuenta":""
+                }
+            ],
             "profile" : "public"
         },
         {
@@ -28,7 +50,8 @@
             "seguro":"0918366431",
             "cargo":"",
             "picture": "",
-            "profile" : "private"
+            "databank":[],
+            "profile" : "public"
         },
         {
             "firstName": "Javier",

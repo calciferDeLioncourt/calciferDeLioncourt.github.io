@@ -144,4 +144,7 @@ document.querySelector('#form').addEventListener('change', e => {
     for(let i = 0; i < document.querySelectorAll('.link__btn').length; i++){
         document.querySelectorAll('.link__btn')[i].style.color=document.querySelectorAll('.input')[3].value+'B3';
     };
+    for(let i = 0; i < document.querySelectorAll('.link__redesSociales').length; i++){
+        document.querySelectorAll('.link__redesSociales')[i].style.color=document.querySelectorAll('.input')[3].value+'B3';
+    };
 }); 
