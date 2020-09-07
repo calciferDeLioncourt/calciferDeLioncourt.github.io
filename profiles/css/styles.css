@@ -113,6 +113,7 @@ input{
     font-family: consolas;
     transition: all .2s ease;
 }
+input.active,
 input:focus{
     background: rgba(66, 46, 46, 0.3);
     height: 25px;

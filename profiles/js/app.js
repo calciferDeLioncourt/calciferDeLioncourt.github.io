@@ -1,16 +1,32 @@
 const form = document.querySelector('#profile'),
     search = document.querySelector('#search'),
     pass = document.querySelector('#pass');
-let superUser = false;
+let superUser = false,
+    busqueda = "";
 header();
 search.addEventListener('keyup', ()=> {
+    valInput(search);
     busqueda = search.value = search.value.toLowerCase().replace(/\b[a-z]/g, function(letter){
         return letter.toUpperCase();
     });
 });
+pass.addEventListener('keyup', ()=> {
+    valInput(pass);
+});
+function valInput(input){
+    if(input.value != ""){
+        input.classList.add('active');
+    }else{
+        input.classList.remove('active');
+    };
+};
 form.addEventListener('submit', e => {
     e.preventDefault();
-    listar(busqueda); 
+    if(busqueda != ""){
+        listar(busqueda); 
+    }else{
+        myAlert('mensaje','Todos los campos son necesarios','');
+    };
 });
 function listar(buscar){
     fetch('json/profiles.json')
@@ -25,9 +41,12 @@ function listar(buscar){
             }else if(profile.length >= 1 && profile[0].profile === "private" && superUser === true){
                 datos.push(profile[0]);
             }else{
-                document.querySelector('#nombre').textContent='No hay datos o el contenido no es publico';
+                myAlert('mensaje','No hay datos o el contenido no es publico','');
                 return
             };
+        }else{
+            myAlert('mensaje','Password Incorrecto','');
+            return
         };
         if(datos.length >= 1){
             modalData(datos);
@@ -111,7 +130,7 @@ function modalData(data){
             window.getSelection().addRange(seleccion);
             let res = document.execCommand('copy');
             window.getSelection().removeAllRanges(seleccion);
-            myAlert('.title',i);
+            myAlert('copy','.title',i);
         });
     };
     // >>>>> -->>>>> ----- eliminar modal ----- <<<<<-- <<<<<
@@ -119,19 +138,24 @@ function modalData(data){
     close.addEventListener('click', ()=>{
         document.querySelector('.id').remove();
         document.querySelector('.btn__close').remove();
+        document.querySelector('#profile').reset();
     });
-    function myAlert(contenedor,indice){
-        let mensaje = document.body.appendChild(document.createElement('div'));
-            mensaje.setAttribute('class','mensaje__alert');
+};
+function myAlert(tipo,contenedor,indice){
+    let mensaje = document.body.appendChild(document.createElement('div'));
+        mensaje.setAttribute('class','mensaje__alert');
+        if(tipo === 'copy'){
             mensaje.textContent= 'Copiado a porta papeles : '+document.querySelectorAll(contenedor)[indice].textContent;
+        }else if(tipo === 'mensaje'){
+            mensaje.textContent= contenedor;
+        };
+    setTimeout(() => {
+        mensaje.style='opacity:0;';
         setTimeout(() => {
-            mensaje.style='opacity:0;'
-            setTimeout(() => {
-                mensaje.remove();
-            }, 300);
-        }, 2000);
-    }
-}
+            mensaje.remove();
+        }, 300);
+    }, 2000);
+};
 function header(){
     let header = document.body.insertBefore(document.createElement('header'), document.querySelector('.cont_img'));
         header.setAttribute('class', 'header');
@@ -149,4 +173,4 @@ function header(){
         textHeader.setAttribute('class', 'p_header');
     let p = textHeader.appendChild(document.createElement('p'));
         p.textContent = 'id_Personal';
-}
+};
