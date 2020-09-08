@@ -1,0 +1,83 @@
+.share {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap; 
+
+    width: 100%;
+    max-width: 1000px;
+    height: 100px;
+    padding: 5px;
+}
+.share .title__share {
+    width: 100%;
+    padding: 5px 0;
+    margin-right: 10px;
+
+    text-align: right;
+    font-size: 1.2em;
+}
+.share .title__share i {
+	margin-right: 10px;
+}
+.share a {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 55px;
+}
+.share .compartir_btn {
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    margin: 10px 0;
+    
+    position: absolute;
+            
+    text-align: center;
+    line-height: 25px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.share .compartir_btn:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.share a:hover .compartir_btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 35px;
+    margin: 0;
+    
+}
+.share a:hover .compartir_btn:after {
+    background:linear-gradient(rgba(255,525,255,.5), rgba(255,255,255,.0));
+    border-radius: 50%;
+}
+.share .compartir_btn_facebook {
+    background-color: #8b9dc3;
+    position: relative;
+    margin-right: 10px;
+}
+
+.share .compartir_btn_twitter {
+    background-color: #c0deed;
+    position: relative;
+    margin-right: 10px;
+}
+
+.share .compartir_btn_whatsapp {
+    background-color: #00a98f;
+    position: relative;
+    margin-right: 10px;
+}
+.share a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+}
